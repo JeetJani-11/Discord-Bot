@@ -86,6 +86,7 @@ module.exports = {
       const resp = await reply.createMessageComponentCollector();
       resp.on("collect", async (i) => {
         i.deferUpdate();
+        console.log(i.user.username);
         if (i.user.username === currentPlayer) {
           const index = i.customId;
           if (options[index] != "" || gameOver) {
