@@ -1,9 +1,15 @@
+const express = require('express')
+const app = express()
+const dotenv = require('dotenv')
+dotenv.config()
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client , Collection, Events, GatewayIntentBits} = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds , GatewayIntentBits.GuildMessages , GatewayIntentBits.Guilds , GatewayIntentBits.MessageContent] })
-const dotenv = require('dotenv')
-dotenv.config()
 client.login(process.env.CLIENT_TOKEN)
 
 client.once(Events.ClientReady, c => {
