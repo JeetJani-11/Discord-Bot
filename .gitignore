@@ -1,0 +1,3 @@
+deploy-commands.js
+node_modules
+/config/dev.env
