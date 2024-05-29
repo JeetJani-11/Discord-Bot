@@ -42,7 +42,7 @@ const rest = new REST().setToken(process.env.CLIENT_TOKEN);
     const data = await rest.put(
       Routes.applicationGuildCommands(
         process.env.CLIENT_ID,
-        "1177119232337653772"
+        process.env.SERVER_ID
       ),
       { body: commands }
     );
